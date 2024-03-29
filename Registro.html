@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/estilos.css"/>
+	<link rel="icon" type="image/jpeg" href="Img/logo.jpeg" sizes="32x32">
+    <title>Registro-PlooNet</title> 
+</head>
+
+<body background="Img/fondoregistro.jpeg" 
+	style="background-repeat: no-repeat;
+	background-size: 172%">
+	<header class="contenedor">
+		<div id="logo">
+			<img src="Img/logo.jpeg">
+		</div>
+		<div id="tt">
+			<h2> PlooNet</h2>
+		</div>
+	
+	<section id="titulo">
+		<h1>Registrate</h1>
+	</section>
+	
+	<script type="text/javascript">
+		function validar() {
+			var Usuario = document.getElementById("usuario").value;
+			var Password = document.getElementById("psw").value;
+			var Name = document.getElementById("nom").value;
+			var LName = document.getElementById("apellidos").value;
+			var Email = document.getElementById("mail").value;
+			var Edad = document.getElementById("edad").value;
+			var Sexo = document.getElementById("sexo").value;
+			var Desc = document.getElementById("descripcion").value;
+
+			if (Usuario.length == 0 || /^\s+$/.test(Usuario)) {
+				alert('Porfavor, Ingrese un usuario');
+				return false;
+			}
+	
+			if (Password.length == 0 || /^\s+$/.test(Password)) {
+				alert('Crea una Contraseña');
+				return false;
+			}
+			
+			if (Name.length == 0 || /^\s+$/.test(Name)) {
+				alert('Porfavor, Escriba su Nombre');
+				return false;
+			}
+
+			if (LName.length == 0 || /^\s+$/.test(LName)) {
+				alert('Porfavor, Escriba sus Apellidos');
+				return false;
+			}
+
+			if (Email.length == /\S+@\S+.\S+/) {
+				alert('Correo Invalido');
+				return false;
+			}
+
+			if (Edad.length == 0 || /^\s+$/.test(Edad)) {
+				alert('Introduzca su edad');
+				return false;
+			}
+
+ 			if(Sexo == ""){
+     			alert('Define tu sexo');
+     			return false;
+ 			}
+			
+			if (Desc.length == 0 || /^\s+$/.test(Desc)) {
+				alert('Descripcion Obligatoria');
+				return false;
+			}
+		return true;
+	 }
+		</script>
+		
+	</header>	
+
+	<section class="formulario">
+		<form method="POST" action="Php/crearUsuario.php" onsubmit="return validar()">
+			<div class="box">
+				<input type="text" name= "usuario" id="usuario" placeholder=" ">
+				<label>Usuario:</label>
+			</div>
+			<div class="box">
+				<input type="password" name= "psw" id="psw" placeholder=" ">
+				<label>Contraseña:</label>
+			</div>
+			<div class="box">
+				<input type="text" name= "nom" id="nom"  placeholder=" ">
+				<label>Nombre:</label>
+			</div>
+			<div class="box">
+				<input type="text" name= "apellidos" id="apellidos" placeholder=" ">
+				<label>Apellidos:</label>
+			</div>
+			<div class="box">
+				<input type="email" name= "mail" id="mail" placeholder=" ">
+				<label>Correo Electrónico:</label>
+			</div>
+			<div class="box">
+				<input type="number" name= "edad" id="edad" placeholder=" ">
+				<label>Edad:</label>
+			</div>
+			<div id="box">
+				<h5>Sexo:</h5>
+				<select name="sexo" id="sexo">
+					<option value=""> 
+					<option value="h"> Hombre
+					<option value="m"> Mujer
+					<option value="i"> Indefinido
+				</select>
+			</div>
+			<div class="box">
+				<input type="textarea" name="desc" id="descripcion" placeholder=" ">
+				<label>Descripción:</label>
+			</div>			
+			<div id="box_button">
+				<center>
+					<input type="submit" name="inicio" value="Iniciar Sesion" class="button"> 
+					<input type="submit" name="enviar" value="Registrarse" class="button">
+				</center>
+			</div>
+		</form>
+	</section>
+	
+</body>
+</html>

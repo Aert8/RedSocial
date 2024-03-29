@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/estilos.css"/> 
+	<link rel="icon" type="image/jpeg" href="Img/logo.jpeg" sizes="32x32">
+	<title>PlooNet-Inicia Sesion o Registrate</title> 
+	
+	<script type="text/javascript">
+	function validar() {
+		var Usuario = document.getElementById("usuario").value;
+		var Password = document.getElementById("psw").value;
+		if (Usuario.length == 0 || /^\s+$/.test(Usuario)) {
+			alert('Porfavor, Ingrese un usuario');
+			return false;
+		}
+
+		if (Password.length == 0 || /^\s+$/.test(Password)) {
+			alert('Introduzca su contraseña');
+			return false;
+		}
+
+	return true;
+ }
+	</script>
+</head>
+
+<body background="Img/fondoindex.jpg" 
+	style="background-repeat: no-repeat;
+	background-size: 118%;"> <!--140%-->
+	<header class="contenedor">
+		<p>
+		<div id="logo">
+			<img src="Img/logo.jpeg">
+		</div>
+		
+		<div id="tt">
+			<h2> PlooNet</h2>
+		</div>	
+	
+	<section id="titulo">
+		<h1>Inicio de Sesion</h1>
+	</section>
+</header>
+	
+	<section class="formulario" >
+		<form  method="POST" action="Php/iniciarSesion.php" onsubmit="return validar()">
+			<div class="box">
+				<input type="text" name= "usuario" id="usuario" placeholder=" ">
+				<label>Usuario: </label>
+			</div>
+			<div class="box">
+				<input type="password" name= "psw" id="psw" placeholder=" ">
+				<label>Contraseña: </label>
+			</div>
+			<div id="box_button"><p>
+					<input type="submit" name="enviar" class="button" value="Iniciar Sesion">
+					<a href="Registro.html" class="button">Registrarse</a>
+			</div>
+		</form>
+	</section>
+</body>
+</html>
