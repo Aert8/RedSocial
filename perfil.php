@@ -31,7 +31,7 @@
 				</li>
 				<li>
 					<section id="perfil">
-						<img src=  "<?php echo "$_SESSION[fotoP]"; ?>"  >
+						<img src=  "Img/<?php echo "$_SESSION[nomUsu]"; ?>/<?php echo "$_SESSION[fotoP]";?>"//Correciones  >
 					</section>
 				</li>
 				<li><a href="perfil.php"> Perfil </a> </li>
@@ -51,11 +51,11 @@
 	</header>
 	
 	<section id="perfil2">
-			<img src=  "<?php echo "$_SESSION[fotoP]"; ?>"  >
+			<img src=  "Img/<?php echo "$_SESSION[nomUsu]"; ?>/<?php echo "$_SESSION[fotoP]";?>"  >
 		<h1> <?php echo "$_SESSION[nombre] $_SESSION[apellidos]"?> </h1>
 		<p>  <?php echo "$_SESSION[descripcion]"?>
 	</section>
-	<button><a href=" <?php echo "php/actualizarDatos.php?usuario=".$fila['nomUsuario'] ?>">editar</a></button>
+	<button><a href=" <?php echo "php/actualizarDatos.php?usuario=".$fila['nomUsuario'] ?>">editar</a></button>//Correcciones
 
 	<hr class="barra" color="#3f888f" width="100%">
 
