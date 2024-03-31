@@ -10,7 +10,7 @@ $correo		=$_POST["mail"];
 $edad		=$_POST["edad"];
 $sexo		=$_POST["sexo"];
 $descripcion=$_POST["desc"];
-$fotoP="img/$nomUsu/perfil.jpg";
+$fotoP="Img/$nomUsu/perfil.jpg";
 
 
 // $password=password_hash($contraseña, PASSWORD_BCRYPT); // BCRYPT algoritmo de encriptacion
@@ -27,8 +27,8 @@ if(!$consultaArray){ //Revisa la consulta, si esta vacio crea el usuario
 	$sql="INSERT INTO usuario VALUES ('$nomUsu', '$contraseña','$nombre','$apellidos','$edad', '$fotoP', '$correo','$descripcion')";
 	
 	if(mysqli_query($conexion, $sql)){ // Guaradar datos y verifica que se ejecute correctamente
-		mkdir("../img/$nomUsu");//Se crea carpeta para las imagenes del usuario
-		copy("../img/default.jpg", "../img/$nomUsu/perfil.jpg");//Se crea una copia de la imagen de perfil
+		mkdir("../Img/$nomUsu");//Se crea carpeta para las imagenes del usuario
+		copy("../Img/default.jpg", "../Img/$nomUsu/perfil.jpg");//Se crea una copia de la imagen de perfil
 		echo "Tu cuenta a sido creada";
 		echo "<p> <a href='../index.html'>Iniciar Sesion </a>";
 	}
