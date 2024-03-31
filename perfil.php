@@ -1,6 +1,12 @@
 <?php
 	include("Php/conexion.php");
 	include("Php/validarSesion.php");
+     
+
+     $sql="SELECT * FROM usuario WHERE nomUsuario='$nomUsu'";
+	$consulta=mysqli_query($conexion,$sql);
+	$fila=mysqli_fetch_array($consulta);
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +55,7 @@
 		<h1> <?php echo "$_SESSION[nombre] $_SESSION[apellidos]"?> </h1>
 		<p>  <?php echo "$_SESSION[descripcion]"?>
 	</section>
+	<button><a href=" <?php echo "php/actualizarDatos.php?usuario=".$fila['nomUsuario'] ?>">editar</a></button>
 
 	<hr class="barra" color="#3f888f" width="100%">
 

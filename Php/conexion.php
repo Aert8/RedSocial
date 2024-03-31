@@ -1,7 +1,7 @@
 <?php
 $servidor="localhost";
-$usuario="alekey"; //Base de datos de Dominio de Dan
-$contrasena="lobito05??"; //Base de datos del Dominio de Dan
+$usuario="root";
+$contrasena="";
 $BD="red-social";
 
 //Crea Conexion
@@ -12,7 +12,7 @@ if(!$conexion){
 	echo "Error en la conexion <br>";
 	die("Conexion fallida: " . mysqli_connect_error());
 }
-else{
-	echo "Conexion exitosa";
-}
+// else{
+	// echo "Conexion exitosa";
+// }
 ?>

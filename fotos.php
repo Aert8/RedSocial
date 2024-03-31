@@ -14,6 +14,8 @@
 </head>
 
 <body>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v15.0" nonce="m13k5BfZ"></script>
 	<header>
 		
 		<nav id="menu">
@@ -75,14 +77,20 @@
 				
 		?>
 		<div class="box_grida"> 
-			<img src= "<?php echo $fila['nom_foto']; ?>" height="200" width="250" style="margin: 4px; width: auto;"<p>
-		</div>
+			<img src= "<?php echo $fila['nom_foto']; ?>" height="200" width="250" style="margin: 4px; width: auto;"><p>
+			<button><a href="php/eliminar_foto.php?id_fotos=<?php echo $fila['id_fotos'] ?>" >Eliminar</a></button><br>
+					
+			</div>
+			
 		
 		<?php
 				}
 		?>
 		</div>
 	</section>
+	
+
+
 
 	<u>Fotos de <?= "$_SESSION[nombre] $_SESSION[apellidos]"?></u>
 </body>

@@ -2,13 +2,13 @@
 	include("conexion.php");
 	include("validarSesion.php");
 
-	//Extrae el valor del último Id de la tabla fotos
+	
 	$consulta="SELECT id_fotos FROM fotos ORDER BY id_fotos DESC LIMIT 1";
 	$consulta = mysqli_query($conexion, $consulta);
 	$consultaArray=mysqli_fetch_array($consulta);
 
 	$idfoto=$consultaArray['id_fotos'];
-	++$idfoto; //Aumenta +1 al último valor del Id
+	++$idfoto; 
 
 	$ubicacion ="img/$nomUsu/$idfoto.jpg";
 	$archivo   =$_FILES['archivo']['tmp_name'];

@@ -60,7 +60,7 @@
 		<?php
 				$consulta="SELECT * FROM `usuario` 
 									WHERE nomUsuario in (SELECT usuario2 FROM `amistad`
-																		WHERE usuario1='$nomUsu') Limit 3";
+																		WHERE usuario1='$nomUsu')";
 				$datos =mysqli_query($conexion, $consulta);
 				while ($fila=mysqli_fetch_array($datos)){
 				
@@ -71,8 +71,9 @@
 			<h2> <?php echo $fila['nomUsuario'] ?>  </h2>
 				</a>
 			<p id="parrafo"> <?php echo $fila['nombre']." " .$fila['apellidos'] ?>
-			<p id="parrafo"> <?php echo $fila['descripcion'] ?>
-			
+			<p id="parrafo"> <?php echo $fila['descripcion'] ?><br>
+			<button><a href=" <?php echo "php/eliminar_amigo.php?usuario=".$fila['nomUsuario'] ?>">Eliminar</a></button>
+
 		</div>
 		
 			<?php
