@@ -1,7 +1,7 @@
 <?php
 $servidor="localhost";
-$usuario="root";
-$contrasena="";
+$usuario="alekey";
+$contrasena="lobito05";
 $BD="red-social";
 
 //Crea Conexion
